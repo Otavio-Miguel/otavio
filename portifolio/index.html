@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Estudante de Administração</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #f0f6fc;
+            --primary-color: #79c0ff;
+            --secondary-color: #58a6ff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-link {
+            transition: color 0.2s, background-color 0.2s;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+            background-color: rgba(121, 192, 255, 0.1);
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: var(--primary-color);
+            margin-left: 2px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        #animated-name {
+            display: inline-block;
+            cursor: default;
+        }
+
+        #animated-name span {
+            transition: color 0.3s ease-in-out, transform 0.1s ease-out;
+            display: inline-block;
+            color: var(--secondary-color);
+        }
+        
+        .avatar-container {
+            width: 200px;
+            height: 250px;
+            background-color: #21262d;
+            border: 4px solid var(--primary-color);
+            border-radius: 12px 12px 100px 100px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0 auto;
+        }
+
+        .skill-icon {
+            background-color: #21262d;
+            border: 2px solid #30363d;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .contact-btn {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            transition: all 0.3s;
+            padding: 12px;
+            border-radius: 50%;
+        }
+        .contact-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--bg-color);
+            border-color: var(--secondary-color);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        .contabilidade-icon-style {
+            background-color: #0078D4 !important;
+            border-color: #0078D4 !important;
+            color: white;
+        }
+
+        .ai-logistica-icon-style { 
+            background-color: #FF4500 !important;
+            border-color: #FF4500 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#inicio" class="text-xl font-bold text-white hover:text-primary-color transition-colors">
+                &lt;Portfólio&gt;
+            </a>
+            <div class="flex space-x-4">
+                <a href="#inicio" class="nav-link text-white">&lt;/Início&gt;</a>
+                <a href="#sobre" class="nav-link text-white">&lt;/Sobre&gt;</a>
+                <a href="#habilidades" class="nav-link text-white">&lt;/Habilidades&gt;</a>
+                <a href="#contato" class="nav-link text-white">&lt;/Contato&gt;</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6">
+        
+        <!-- SEÇÃO: INÍCIO -->
+        <section id="inicio" class="hero-section pt-24">
+            <div class="w-full">
+                <h1 class="text-6xl md:text-8xl font-extrabold mb-6">
+                    <span class="text-primary-color">Prazer();</span> Eu sou
+                    <span class="text-secondary-color text-7xl md:text-8xl mt-2 mb-4 block" id="animated-name">
+                        Otavio Miguel.
+                    </span>
+                    
+                    <span id="typing-text" class="text-4xl md:text-6xl font-bold block text-white"></span>
+                    <span class="typing-cursor"></span>
+                </h1>
+
+                <p class="text-lg md:text-xl max-w-4xl text-gray-400 mt-10">
+                    <span class="font-bold text-primary-color bg-gray-900 px-3 py-1 rounded-lg inline-block mb-4">
+                        EM BUSCA DE OPORTUNIDADE: Estágio/Aprendiz em Administração.
+                    </span>
+                    <span class="font-bold text-white block mt-2">Estudante Técnico</span> – Transformo processos em resultados. Focado em análise de dados, otimização de rotinas e organização empresarial, garantindo eficiência e suporte à tomada de decisões.
+                </p>
+
+                <p class="text-sm italic max-w-4xl text-gray-500 mt-4">
+                    "Motivação é o fogo que acende, disciplina é o combustível que mantém a chama acesa."
+                </p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: SOBRE MIM -->
+        <section id="sobre" class="py-24 pt-32">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center text-primary-color">
+                &lt;/ Sobre Mim &gt;
+            </h2>
+            <div class="flex flex-col lg:flex-row items-center gap-12 bg-[#161b22] p-8 md:p-12 rounded-xl border border-[#30363d]">
+                <div class="w-full">
+                    <p class="text-xl font-semibold text-white mb-4">Olá, meu nome é Otavio Miguel, e tenho 16 anos.</p>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Sou estudante na <span class="text-secondary-color font-semibold">ETEC de Jaboticabal</span>, onde estou cursando Técnico em Administração. Meu foco principal é aprimorar constantemente meus conhecimentos e habilidades através de cursos de aperfeiçoamento e projetos práticos.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Busco ativamente uma oportunidade de <span class="text-primary-color font-bold">emprego ou estágio</span> para aplicar meus conhecimentos em Administração e Logística, contribuindo para a eficiência e organização de uma empresa, enquanto me aperfeiçoo profissionalmente.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: HABILIDADES -->
+        <section id="habilidades" class="py-24 pt-32">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-primary-color">
+                &lt;/ Habilidades &gt;
+                <span class="block text-xl font-normal text-gray-400 mt-2">Um pedaço de mim</span>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center">
+                
+                <!-- Skill: Excel -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="skill-icon w-20 h-20 bg-[#217346] text-white border-[#217346] flex items-center justify-center">
+                        <span class="text-4xl font-extrabold">X</span>
+                    </div>
+                    <p class="mt-2 text-sm font-semibold text-white">Excel</p>
+                </div>
+
+                <!-- Skill: PowerBI -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="skill-icon w-20 h-20 bg-[#F2C811] border-[#F2C811] flex items-center justify-center">
+                        <i data-lucide="bar-chart-3" class="w-10 h-10 text-[#2B579A]"></i> 
+                    </div>
+                    <p class="mt-2 text-sm font-semibold text-white">PowerBI</p>
+                </div>
+
+                <!-- Skill: Word -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="skill-icon w-20 h-20 bg-[#2B579A] text-white border-[#2B579A] flex items-center justify-center">
+                        <span class="text-4xl font-extrabold">W</span>
+                    </div>
+                    <p class="mt-2 text-sm font-semibold text-white">Word</p>
+                </div>
+
+                <!-- Skill: PowerPoint -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="skill-icon w-20 h-20 bg-[#B7472A] text-white border-[#B7472A] flex items-center justify-center">
+                        <span class="text-4xl font-extrabold">P</span>
+                    </div>
+                    <p class="mt-2 text-sm font-semibold text-white">PowerPoint</p>
+                </div>
+                
+                <!-- Skill: Contabilidade Empresarial -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="skill-icon w-20 h-20 contabilidade-icon-style flex items-center justify-center">
+                        <i data-lucide="scale" class="w-10 h-10"></i>
+                    </div>
+                    <p class="mt-2 text-sm font-semibold text-white">Contabilidade Empresarial</p>
+                </div>
+
+                <!-- Skill: IA Logística -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="skill-icon w-20 h-20 ai-logistica-icon-style flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-5 h-5 mr-1"></i>
+                        <i data-lucide="truck" class="w-5 h-5 ml-1"></i>
+                    </div>
+                    <p class="mt-2 text-sm font-semibold text-white">Inteligência Artificial a base de Logística</p>
+                </div>
+
+            </div>
+            
+            <div class="text-center text-sm text-gray-500 mt-10">
+                <p>O foco é em *Análise de Dados, **Visualização* e *Otimização de Processos*.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: CONTATO -->
+        <section id="contato" class="py-24 pt-32 pb-48 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-primary-color">
+                Entre em contato! ()
+            </h2>
+            
+            <div class="avatar-container mb-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" class="w-24 h-24 text-primary-color">
+                    <circle cx="12" cy="7" r="4" fill="currentColor"/>
+                    <path d="M12 22s8-4 8-10c0-4.418-3.582-8-8-8s-8 3.582-8 8c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 16h4" stroke-linecap="round" stroke-width="2"/>
+                </svg>
+            </div>
+
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/otavio-beloni-18052b37a" target="_blank" class="contact-btn text-white hover:text-black">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.instagram.com/otavio_.m1/" target="_blank" class="contact-btn text-white hover:text-black">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:otaviobeloni20@gmail.com" class="contact-btn text-white hover:text-black">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <p class="text-lg font-semibold text-white mb-10">
+                E-mail: <span class="text-secondary-color">otaviobeloni20@gmail.com</span>
+            </p>
+
+            <p class="text-gray-500 text-sm">
+                Design & Built inspirado por Vinod Jangid e adaptado por Gemini
+            </p>
+        </section>
+        
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        const textToType = "Eu trabalho com Gestão Empresarial";
+        const typingElement = document.getElementById('typing-text');
+        const cursorElement = document.querySelector('.typing-cursor');
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textToType.length) {
+                typingElement.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 1000);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typingElement.textContent = textToType.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                setTimeout(type, 500);
+            }
+        }
+        
+        function setupNameAnimation() {
+            const nameElement = document.getElementById('animated-name');
+            const nameText = nameElement.textContent.trim();
+            nameElement.innerHTML = '';
+
+            const colors = ['#FFC72C', '#FF4500', '#3CB371', '#40E0D0', '#7B68EE', '#9370DB', '#FFD700', '#FF1493'];
+
+            nameText.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char; 
+                
+                span.onmouseover = () => {
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    span.style.color = randomColor;
+                    span.style.transform = 'translateY(-2px)';
+                };
+                
+                span.onmouseout = () => {
+                    span.style.color = 'var(--secondary-color)';
+                    span.style.transform = 'translateY(0)';
+                };
+                nameElement.appendChild(span);
+            });
+        }
+
+
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        function handleScroll() {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } 
+            else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollY = window.scrollY;
+        }
+
+        window.onload = function() {
+            type();
+            setupNameAnimation();
+            
+            window.addEventListener('scroll', handleScroll);
+        };
+    </script>
+</body>
+</html>
